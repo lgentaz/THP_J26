@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'user/show'
+  
+  get 'gossip/show'
+
   root 'static_pages#home'
 
   get '/', to: 'static_pages#home'

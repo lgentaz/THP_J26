@@ -1,38 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#">The Gossip Project</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav nav-pills">
-      <li class="nav-item">
-         <%= link_to "Accueil", root_path, class: "nav-link active"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "L'équipe", team_path, class: "nav-link"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contact", contact_path, class: "nav-link"%>
-      </li>
-    </ul>
-  </div>
-</nav>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand">The Gossip Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-pills">
+        <li class="nav-item">
+          <%= link_to "Accueil", root_path, class: "nav-link active"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "L'équipe", team_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", contact_path, class: "nav-link"%>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <div class="container-fluid">
-  <div class="my-3 text-center">
+  <div class="mt-5 text-center">
     <h1>Les derniers potins</h1><br><br>
   </div>
   <div class="row">
-     <% Gossip.all.each do |gossip| %>
-   <div class="col-l-3 col-md-4 col-sm-6">
-      <div class="card border-success mb-3">
-        <div class="card-body">
+    <% Gossip.all.each do |gossip| %>
+      <div class="col-l-3 col-md-4 col-sm-6">
+        <div class="card border-success mb-3">
+          <div class="card-body">
             <h5 class="card-title"><%= gossip.title %></h5>
             <p class="card-text"> de <%= gossip.user.first_name %></p>
+          </div>
+          <a href="#" class="btn btn-success">Voir</a>
         </div>
-        <a href="#" class="btn btn-success">Voir</a>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
