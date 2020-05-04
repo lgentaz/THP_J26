@@ -22,22 +22,23 @@
 
 <div class="container">
   <div class="card my-5">
-    <%single_user = User.find(params[:id])%>
     <div class="card-header">
-      Bavard n°<%= single_user.id %>
+      Bavard n°<%= @user.id %>
     </div>
     <div class="card-body py-2 row">
       <img src="<%=Faker::Avatar.image%>" class="img-thumbnail col-sm-3">
       <h1 class="card-title col-sm-8 text-center">
-        <br><span class="text-warning">Nom :  </span><%= single_user.first_name%> <%= single_user.last_name%> <br> <br>
-        <small><span class="text-warning">Email :  </span><%= single_user.email%></small>
+        <br><span class="text-warning">Nom :  </span><%= @user.first_name%> <%= @user.last_name%> <br>
+        <small><span class="text-warning">Email :  </span><%= @user.email%><br>
+        <span class="text-warning">Age :  </span><%= @user.age%></small>
       </h1>
     </div>
     <div class="card-footer text-muted">
-    <%user_city = single_user.city%>
+    <%user_city = @user.city%>
       en direct de <%= user_city.name%>
     </div>
   </div>
+
 </div>
 
 
