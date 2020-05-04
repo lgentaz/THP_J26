@@ -1,4 +1,4 @@
 class GossipController < ApplicationController
-  def show
+  def gossip
   end
 end
