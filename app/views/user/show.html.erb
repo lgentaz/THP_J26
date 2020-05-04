@@ -39,7 +39,12 @@
     </div>
   </div>
 
+  <div>
+    <h3 class="mb-3">Tout les potins de <%= @user.first_name%> : </h3>
+    <% @gossips.each do |gossip| %>
+      <h5> <%= link_to gossip.title, gossip_path(gossip.id), class:"text-warning"%>    
+     <% end %>
+  </div>
+
 </div>
-
-
 

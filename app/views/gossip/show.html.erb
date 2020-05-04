@@ -29,7 +29,7 @@
       <h1 class="card-title text-center">
         <span class="font-weight-bold"><%= @gossip.title%></span>
         <small> by 
-        <a href="/user/<%= @gossip.user.id %>"><%= @gossip.user.first_name%> <%= @gossip.user.last_name%></a>
+        <a href="/user/<%= @gossip.user.id %>" class="text-warning"><%= @gossip.user.first_name%> <%= @gossip.user.last_name%></a>
         </small>
       </h1>
       <h5 class="card-text pt-5 px-2"><%= @gossip.content%></h5>    
