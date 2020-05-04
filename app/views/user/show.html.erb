@@ -20,8 +20,25 @@
 </nav>
 </header>
 
-<div class="container-fluid">
-    <h1>User#show</h1>
-    <p>Find me in app/views/user/show.html.erb</p>
+<div class="container">
+  <div class="card my-5">
+    <% single_gossip = user.find(params[:id])%>
+    <div class="card-header">
+      Gossip n°<%= single_gossip.id %>
+    </div>
+    <div class="card-body py-5">
+      <h1 class="card-title text-center">
+        <span class="font-weight-bold"><%= single_gossip.title%></span>
+        <small> by 
+        <a href="/user/<%= single_gossip.user.id %>"><%= single_gossip.user.first_name%> <%= single_gossip.user.last_name%></a>
+        </small>
+      </h1>
+      <h5 class="card-text pt-5 px-2"><%= single_gossip.content%></h5>    
+    </div>
+    <div class="card-footer text-muted text-right">
+      publié le <%= single_gossip.created_at.strftime("%d/%m/%Y") %>
+    </div>
+  </div>
 </div>
+
 
