@@ -1,4 +1,7 @@
+require 'user'
+
 class GossipController < ApplicationController
-  def gossip
+  def single_gossip
+    puts @gossip = Gossip.find(params[:id])
   end
 end

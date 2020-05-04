@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @user = User.all
   end
 
   def contact

@@ -22,23 +22,23 @@
 
 <div class="container">
   <div class="card my-5">
-    <% single_gossip = user.find(params[:id])%>
+    <%single_user = User.find(params[:id])%>
     <div class="card-header">
-      Gossip n°<%= single_gossip.id %>
+      Bavard n°<%= single_user.id %>
     </div>
-    <div class="card-body py-5">
-      <h1 class="card-title text-center">
-        <span class="font-weight-bold"><%= single_gossip.title%></span>
-        <small> by 
-        <a href="/user/<%= single_gossip.user.id %>"><%= single_gossip.user.first_name%> <%= single_gossip.user.last_name%></a>
-        </small>
+    <div class="card-body py-2 row">
+      <img src="<%=Faker::Avatar.image%>" class="img-thumbnail col-sm-3">
+      <h1 class="card-title col-sm-8 text-center">
+        <br><span class="text-warning">Nom :  </span><%= single_user.first_name%> <%= single_user.last_name%> <br> <br>
+        <small><span class="text-warning">Email :  </span><%= single_user.email%></small>
       </h1>
-      <h5 class="card-text pt-5 px-2"><%= single_gossip.content%></h5>    
     </div>
-    <div class="card-footer text-muted text-right">
-      publié le <%= single_gossip.created_at.strftime("%d/%m/%Y") %>
+    <div class="card-footer text-muted">
+    <%user_city = single_user.city%>
+      en direct de <%= user_city.name%>
     </div>
   </div>
 </div>
+
 
 
