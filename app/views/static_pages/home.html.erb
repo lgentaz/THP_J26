@@ -4,9 +4,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link active" href="/team">Accueil <span class="sr-only">(current)</span></a>
+         <%= link_to "Accueil", root_path, class: "nav-link active"%>
       </li>
       <li class="nav-item">
         <%= link_to "L'équipe", team_path, class: "nav-link"%>
@@ -19,8 +19,21 @@
 </nav>
 
 <div class="container-fluid">
-<div class="">
-<h1>Salut <%= params[:user_entry]%> !</h1><br><br>
-<p>Bienvenue sur Gossip Project, l'endroit idéal pour retrouver tous les potins.</p><br><br>
-<p>Tu peux aller tout de suite voir </p>
+  <div class="my-3 text-center">
+    <h1>Les derniers potins</h1><br><br>
+  </div>
+  <div class="row">
+     <% Gossip.all.each do |gossip| %>
+   <div class="col-l-3 col-md-4 col-sm-6">
+      <div class="card border-success mb-3">
+        <div class="card-body">
+            <h5 class="card-title"><%= gossip.title %></h5>
+            <p class="card-text"> de <%= gossip.user.first_name %></p>
+        </div>
+        <a href="#" class="btn btn-success">Voir</a>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
+
